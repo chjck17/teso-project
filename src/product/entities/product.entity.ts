@@ -4,6 +4,7 @@ import {
   Entity,
   JoinColumn,
   ManyToMany,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -14,8 +15,8 @@ export class Product {
   id: number;
   @Column()
   name: string;
-  @ManyToMany(() => Category, (categories: Category) => categories.product)
-  public categories: Category[];
+  @ManyToOne(() => Category, (categories: Category) => categories.product)
+  public categories: Category;
   @OneToOne(() => ProductDetail, {
     eager: true,
     cascade: true,
