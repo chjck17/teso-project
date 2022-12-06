@@ -17,23 +17,4 @@ const config: DataSourceOptions & PostgresConnectionOptions = {
   migrationsTransactionMode: 'all',
 };
 
-// switch (process.env.NODE_ENV) {
-//   case 'test':
-//     break;
-//   case 'development':
-//     break;
-//   case 'prod':
-//     break;
-
-//   // default is local
-//   default:
-//     config = {
-//       ...config,
-//       migrationsRun: false,
-//       logging: true,
-//       synchronize: true,
-//     };
-//     break;
-// }
-
 export const dataSource = new DataSource(config);
